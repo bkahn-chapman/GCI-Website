@@ -7,3 +7,4 @@
 # Benjamin Kahn - 4/14/20 - 9:15 PM - Moved everything to a new repository in order to get the folders working.
 # Benjamin Kahn - 4/22/20 - 11:10 PM - Added the page where the user can enter their link.
 # Benjamin Kahn - 4/22/20 - 11:20 PM - Set the website up with Github Pages so that anyone can access it.
+# Benjamin Kahn - 4/22/20 - 12:45 PM - Added links to go back and forth between the two pages and updated the aesthetics.

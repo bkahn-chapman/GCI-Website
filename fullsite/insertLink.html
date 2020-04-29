@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+    crossorigin="anonymous"
+  />
+  <body>
+    <div class="container">
+      <div class="header">
+        <nav>
+          <ul class="nav nav-pills pull-right">
+            <li role="presentation" class="active">
+              <a href="index.html">Home &nbsp;</a>
+            </li>
+            <li role="presentation">
+              <a href="insertLink.html">Check a site! &nbsp;</a>
+            </li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">Check a website!</h3>
+      </div>
+      <form>
+        Enter a website:
+        <input id="url" type="text" name="UserLink" size="100" />
+      </form>
+      <div id="site-data-container" style="margin-top: 100px;"></div>
+    </div>
+
+    <script>
+      document
+        .getElementById("url")
+        .addEventListener("keypress", function (event) {
+          event.preventDefault();
+          if (event.keyCode === 13) {
+            fetch("http://127.0.0.1:5000/sendlink", {
+              method: "post",
+              body: JSON.stringify({ url: event.target.value }),
+              headers: {
+                "Content-Type": "application/json",
+              },
+            })
+              .then((response) => response.json())
+              .then(({ info }) => {
+                document.getElementById("site-data-container").innerText = info;
+              });
+          }
+        });
+    </script>
+  </body>
+</html>

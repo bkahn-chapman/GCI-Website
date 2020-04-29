@@ -27,7 +27,7 @@ class StartPage(tk.Frame):
         tk.Label(self, text="Enter a URL").pack(pady=40)
         StartPage.url = tk.Entry(self)
         StartPage.url.pack()
-        StartPage.thing = StartPage.url.get();
+        StartPage.thing = StartPage.url.get()
         tk.Button(self, text="submit", command = lambda : master.switch_frame(PageOne)).pack()
 
 class PageOne(tk.Frame):

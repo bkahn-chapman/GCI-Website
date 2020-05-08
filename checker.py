@@ -11,4 +11,4 @@ def main():
     return jsonify(urlGrab.parseURL())
 
 if __name__ == "__main__":
-    app.run(host='192.168.50.168', port=16598)
+    app.run()
